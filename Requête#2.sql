@@ -6,7 +6,7 @@ FROM lieu
 LEFT JOIN personnage ON lieu.id_lieu = personnage.id_lieu
 
 -- Regroupement des résultats pour obtenir le count de 'personnage' pour chaque 'id_lieu'
-GROUP BY nom_lieu
+GROUP BY lieu.nom_lieu
 
 -- Tri par ordre décroissant en fonction du 'nombre_de_personnage' par 'id_lieu'
 ORDER BY nombre_de_personnage DESC;  

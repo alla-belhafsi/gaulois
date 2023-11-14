@@ -5,9 +5,15 @@ SELECT
     lieu.nom_lieu -- Sélectionne le nom du lieu depuis la table "lieu"
 FROM
     bataille
+
+-- Joindre la table "bataille" et "lieu" sur leur relation d'ID
 LEFT JOIN
-    lieu ON bataille.id_lieu = lieu.id_lieu -- Joindre la table "bataille" et "lieu" sur leur relation d'ID
+    lieu ON bataille.id_lieu = lieu.id_lieu 
+
+-- Regroupement des résultats par nom de la bataille, date de la bataille et lieu de la bataille
 GROUP BY
-    bataille.nom_bataille, bataille.date_bataille, lieu.nom_lieu -- Regroupement des résultats par nom de la bataille, date de la bataille et lieu de la bataille
+    bataille.nom_bataille, bataille.date_bataille, lieu.nom_lieu
+
+-- Trie par date de la bataille dans l'ordre décroissant avec un format spécifique (année-mois-jour)
 ORDER BY
-    bataille.date_bataille;
+    DATE_FORMAT(bataille.date_bataille, '%Y-%m-%d') DESC; 

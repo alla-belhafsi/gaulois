@@ -10,7 +10,7 @@ FROM boire
 INNER JOIN personnage ON boire.id_personnage = personnage.id_personnage
 
 -- Groupement des résultats par 'personnage.id_personnage' et 'personnage.nom_personnage' pour obtenir les totaux par personnage
-GROUP BY personnage.id_personnage, personnage.nom_personnage
+GROUP BY personnage.id_personnage
 
 -- Tri des résultats par ordre décroissant de 'total_doses_bues' pour classer du plus grand buveur au plus petit
 ORDER BY total_doses_bues DESC;

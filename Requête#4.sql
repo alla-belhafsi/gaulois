@@ -8,7 +8,7 @@ FROM specialite
 INNER JOIN personnage ON specialite.id_specialite = personnage.id_specialite
 
 -- Regroupement des résultats pour obtenir le count de 'personnage' pour chaque 'id_specialite'
-GROUP BY specialite.nom_specialite
+GROUP BY specialite.id_specialite
 
 -- Tri par ordre décroissant en fonction du 'nombre_de_personnage' par 'id_specialite'
 ORDER BY nombre_de_personnage DESC;

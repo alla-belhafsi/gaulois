@@ -18,7 +18,7 @@ INNER JOIN
     specialite ON personnage.id_specialite = specialite.id_specialite
 -- Regroupement des résultats par nom du lieu, adresse du personnage, nom du personnage et nom de la spécialité 
 GROUP BY 
-    lieu.nom_lieu, personnage.adresse_personnage, personnage.nom_personnage, specialite.nom_specialite
+    lieu.id_lieu, personnage.id_personnage, specialite.id_specialite
 -- Trie les résultats par nom du lieu
 ORDER BY 
     lieu.nom_lieu; 
@@ -41,7 +41,7 @@ INNER JOIN
     specialite ON personnage.id_specialite = specialite.id_specialite
 -- Regroupement des résultats par nom du personnage, nom de spécialité, adresse du personnage et nom du lieu
 GROUP BY 
-    personnage.nom_personnage, specialite.nom_specialite, personnage.adresse_personnage, lieu.nom_lieu
+    personnage.id_personnage, specialite.id_specialite, lieu.id_lieu
 -- Trie les résultats par nom du personnage
 ORDER BY 
     personnage.nom_personnage; 

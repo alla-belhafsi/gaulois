@@ -13,7 +13,7 @@ LEFT JOIN boire ON personnage.id_personnage = boire.id_personnage
 WHERE boire.id_personnage IS NULL OR boire.dose_boire IS NULL
 
 -- Groupement des résultats par ID et nom de personnage
-GROUP BY personnage.id_personnage, personnage.nom_personnage
+GROUP BY personnage.id_personnage
 
 -- Tri des résultats par ordre alphabétique
 ORDER BY personnage_sans_boire ASC;

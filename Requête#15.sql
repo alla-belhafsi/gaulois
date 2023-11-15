@@ -1,0 +1,1 @@
+--  Nom du / des personnages qui n'ont pas le droit de boire de la potion 'Magique'.

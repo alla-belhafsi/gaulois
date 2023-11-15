@@ -11,7 +11,7 @@ INNER JOIN lieu ON personnage.id_lieu = lieu.id_lieu
 WHERE lieu.id_lieu != 1
 
 -- Groupement des résultats par ID et nom de lieu pour obtenir les totaux par lieu
-GROUP BY lieu.id_lieu, lieu.nom_lieu
+GROUP BY lieu.id_lieu
 
 -- Tri des résultats par ordre décroissant du nombre d'habitants pour afficher le lieu avec le plus grand nombre d'habitants en premier
 ORDER BY COUNT(personnage.id_personnage) DESC;

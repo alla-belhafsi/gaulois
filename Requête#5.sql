@@ -15,7 +15,7 @@ INNER JOIN
 
 -- Regroupement des résultats par nom de la bataille, date de la bataille et lieu de la bataille
 GROUP BY
-    bataille.nom_bataille, bataille.date_bataille, lieu.nom_lieu
+    bataille.id_bataille, lieu.id_lieu
 
 -- Trie par date de la bataille dans l'ordre décroissant avec un format spécifique (année-mois-jour)
 ORDER BY

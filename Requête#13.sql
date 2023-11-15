@@ -15,3 +15,5 @@ GROUP BY lieu.id_lieu, lieu.nom_lieu
 
 -- Tri des résultats par ordre décroissant du nombre d'habitants pour afficher le lieu avec le plus grand nombre d'habitants en premier
 ORDER BY COUNT(personnage.id_personnage) DESC;
+
+

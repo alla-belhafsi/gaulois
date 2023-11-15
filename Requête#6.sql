@@ -13,5 +13,8 @@ INNER JOIN ingredient ON composer.id_ingredient = ingredient.id_ingredient
 
 -- Jointure entre la table 'composer' et la table 'potion' sur leur relation d'ID d'ingrédient
 INNER JOIN potion ON composer.id_potion = potion.id_potion
-GROUP BY potion.nom_potion;
+GROUP BY potion.nom_potion
+
+-- Trié le coût par ordre décroissant
+ORDER BY cout_potion DESC;
 

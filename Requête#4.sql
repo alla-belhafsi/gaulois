@@ -3,7 +3,7 @@ SELECT specialite.nom_specialite, COUNT(personnage.id_specialite) AS nombre_de_p
 FROM specialite
 
 -- Jointure entre la table 'specialite' et la table 'personnage' sur leur relation d'ID
-LEFT JOIN personnage ON specialite.id_specialite = personnage.id_specialite
+INNER JOIN personnage ON specialite.id_specialite = personnage.id_specialite
 
 -- Regroupement des résultats pour obtenir le count de 'personnage' pour chaque 'id_specialite'
 GROUP BY specialite.nom_specialite

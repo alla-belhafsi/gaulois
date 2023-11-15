@@ -1,3 +1,5 @@
+-- Nom des spécialités avec nombre de personnages par spécialité (trié par nombre de personnages décroissant).
+
 -- Sélectionne les 'nom_specialite' et le count des 'id_specialite' par 'personnage'
 SELECT specialite.nom_specialite, COUNT(personnage.id_specialite) AS nombre_de_personnage
 FROM specialite

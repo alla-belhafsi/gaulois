@@ -1,3 +1,5 @@
+-- om des lieux qui finissent par 'um'.
+
 -- Sélectionne le nom des lieux 
 SELECT nom_lieu
 

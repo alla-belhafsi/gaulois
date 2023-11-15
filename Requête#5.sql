@@ -1,3 +1,5 @@
+-- Nom, date et lieu des batailles, classées de la plus récente à la plus ancienne (dates affichées au format jj/mm/aaaa).
+
 -- Sélectionne les informations sur les batailles, leurs nom, les dates et les lieux, triés par date
 SET lc_time_names = 'fr_FR';
 SELECT

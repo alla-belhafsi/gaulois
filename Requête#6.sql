@@ -1,3 +1,5 @@
+-- Nom des potions + coût de réalisation de la potion (trié par coût décroissant).
+
 -- Pour chaque 'composer.id_potion' lier à 'composer.id_ingrédient' multiplié 'composer.qte' par 'ingredient.cout_ingredient'.
 -- Donc 'cout_potion' est l'additionnement des résultats de '(composer.qte)*('ingredient.cout_ingredient)' pour chaque 'composer.id_potion' lier à 'composer.id_ingrédient'
 -- La somme des coûts de chaque multiplication de lingrédient et sa quantité donne le coût total de chaque potion

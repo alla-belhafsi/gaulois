@@ -1,5 +1,5 @@
---  Nom des ingrédients + coût + quantité de chaque ingrédient qui composent la potion 'Santé'(id9*78)+(id23*3)+(id25*1)
--- id9 = 16.5, id23 = 30, id25 = 80
+--  Nom des ingrédients + coût + quantité de chaque ingrédient qui composent la potion 'Santé'
+-- la potion 'Santé'(id9*78)+(id23*3)+(id25*1) id9 = 16.5, id23 = 30, id25 = 80
 
 -- Sélection des colonnes 'nom_ingredient', 'cout_ingredient' et 'qte'
 SELECT ingredient.nom_ingredient AS nom_ingredient, ingredient.cout_ingredient, composer.qte

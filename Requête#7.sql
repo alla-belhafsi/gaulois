@@ -10,7 +10,7 @@ FROM composer
 -- Jointure entre la table 'composer' et la table 'ingredient' sur leur relation d'ID d'ingrédient
 INNER JOIN ingredient ON composer.id_ingredient = ingredient.id_ingredient
 
--- Filtre pour obtenir les ingrédients associés à la potion 'Santé' (id_potion = 3)
+-- Filtre pour obtenir les ingrédients associés à la potion 'Santé' (ID de potion = 3)
 WHERE composer.id_potion = 3
 
 -- Trier les résultats par ordre décroissant de 'cout_ingredient'

@@ -1,6 +1,6 @@
 -- Nom des personnages + spécialité + adresse et lieu d'habitation, triés par lieu (Requête 1) puis par nom de personnage (Requête 2).
 
--- Requête 1: triés par nom du lieu
+-- Requête 1: triés par nom du lieu 
 
 -- Sélectionne le nom du lieu depuis la table "lieu" et l'aliasant en "nom_lieu", l'adresse du personnage depuis la table "personnage",le nom du personnage depuis la table "personnage" et le nom de la spécialité depuis la table "specialite"
 SELECT 

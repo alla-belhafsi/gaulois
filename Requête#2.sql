@@ -1,4 +1,4 @@
---  Nombre de personnages par lieu (trié par nombre de personnages décroissant).
+--  Nombre de personnages par lieu (trié par nombre de personnages décroissant). 
 
 -- Sélectionne les 'nom_lieu' et count des 'id_personnage' par 'lieu'
 SELECT lieu.nom_lieu, COUNT(personnage.id_personnage) AS nombre_de_personnage

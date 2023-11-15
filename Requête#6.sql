@@ -17,4 +17,3 @@ GROUP BY potion.nom_potion
 
 -- Trié le coût par ordre décroissant
 ORDER BY cout_potion DESC;
-

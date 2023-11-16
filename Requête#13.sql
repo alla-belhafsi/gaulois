@@ -16,7 +16,8 @@ WHERE l.id_lieu != 1
 GROUP BY l.id_lieu
 
 -- Tri des résultats par ordre décroissant du nombre d'habitants pour afficher le lieu avec le plus grand nombre d'habitants en premier
-ORDER BY COUNT(p.id_personnage) DESC;
+ORDER BY total_habitants DESC
+LIMIT 1;
 
 -- Seconde Methode avec sous-requête permet d'afficher tout les lieux avec le plus grand nombre d'habitants, au lieu d'afficher juste un seul en cas d'égalité
 

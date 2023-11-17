@@ -23,6 +23,7 @@ ORDER BY total_casques_pris DESC
 LIMIT 1;
 
 
+
 -- Seconde méthode avec sous-requête permet d'afficher toutes les batailles avec le plus grand nombre de casques pris, au lieu d'afficher juste une seule en cas d'égalité
 
 -- Sélectionne le nom de la bataille et le total de casques pris pour chaque bataille
@@ -45,8 +46,11 @@ HAVING SUM(pc.qte) >= ALL (
     FROM (
         -- Calcule le total de casques pris pour chaque bataille
         SELECT SUM(pc2.qte) AS total_casques_pris
+
+        -- Table utilisée dans la requête
         FROM prendre_casque pc2
-        GROUP BY pc2.id_bataille
         -- Groupement par l'identifiant de la bataille
+        GROUP BY pc2.id_bataille
+        
     ) AS subquery
 );

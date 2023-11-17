@@ -22,7 +22,11 @@ GROUP BY personnage.id_personnage
 
 -- Trier les résultats par ordre décroissant de quantité 'qte'
 ORDER BY total_casques_pris DESC
+
+-- Filtre qui permet d'afficher juste un seul personnage avec le plus grand nombre de casques pris
 LIMIT 1;
+
+
 
 -- Seconde Méthode avec sous-requête permet d'afficher tout les personnages avec le plus grand nombre de casques pris, au lieu d'afficher juste un seul en cas d'égalité
 
@@ -45,23 +49,28 @@ WHERE b.id_bataille = 1
 -- Groupement des résultats par l'identifiant de la bataille
 GROUP BY p.id_personnage
 
+-- Sous-requête pour ne conserver que les personnages ayant le total de casques pris supérieur ou égal 
 HAVING SUM(pc.qte) >= ALL (
-    
+
     -- Sélectionne le nom de la personne et le total de casques pris dont le 'id_bataille' = 1
     SELECT subquery.total_casques_pris
+
+    -- Table utilisée dans la requête
     FROM(
-        -- Calcule le total de casques pris la id_bataille = 1
+        -- Calcule le total de casques pris dans id_bataille = 1
         SELECT SUM(pc2.qte) AS total_casques_pris
+
         -- Table utilisée dans la requête
         FROM prendre_casque pc2
 
         -- Jointure entre les tables
         INNER JOIN personnage p2 ON pc2.id_personnage = p2.id_personnage
         INNER JOIN bataille b2 ON pc2.id_bataille = b2.id_bataille
+
         -- Filtre pour la bataille spécifique
         WHERE b2.id_bataille = 1
 
-        -- Groupement des résultats par l'identifiant de prendre_casque
+        -- Groupement des résultats par l'identifiant du personnage
         GROUP BY pc2.id_personnage
     ) AS subquery
 );

@@ -1,4 +1,4 @@
--- Nom du ou des personnages qui ont le plus de 'prendre_casques.qte' dans la bataille 'Bataille du village gaulois'.
+-- Nom du ou des personnages qui ont le plus de 'prendre_casques.qte' dans la bataille 'Bataille du village gaulois' dont le 'id_bataille' = 1.
 
 -- Première Méthode permet d'afficher juste un seul personnage avec le plus grand nombre de casques pris en cas d'égalité avec un autre personnage dans la bataille 'Bataille du village gaulois'.
 
@@ -26,29 +26,46 @@ LIMIT 1;
 
 -- Seconde Méthode avec sous-requête permet d'afficher tout les personnages avec le plus grand nombre de casques pris, au lieu d'afficher juste un seul en cas d'égalité
 
--- Sélection des noms des personnages ayant pris le plus grand nombre de casques dans une bataille spécifique
+-- Sélectionne le nom de la personne et le total de casques pris dont le 'id_bataille' = 1
+SELECT p.nom_personnage AS nom_personnage, 
+       SUM(pc.qte) AS total_casques_pris
 
-SELECT personnage.nom_personnage AS nom_personnage, subquery.total_casques_pris AS total_casques_pris
+-- Table utilisée dans la requête
+FROM personnage p
 
--- Sous-requête pour obtenir le total de casques pris par le personnage ayant le plus grand nombre de casques dans la bataille spécifiée
-FROM (
-    SELECT SUM(p.qte) AS total_casques_pris, p.id_personnage
-    FROM prendre_casque p
-    INNER JOIN bataille b ON p.id_bataille = b.id_bataille
-    WHERE b.id_bataille = 1 -- Filtre pour la bataille spécifique
-    GROUP BY p.id_personnage
-    ORDER BY total_casques_pris DESC
-    LIMIT 1 -- Sélectionne le personnage avec le plus grand nombre de casques pris
-) AS subquery
+-- Jointure entre les tables prendre_casque et personnage pour récupérer les données nécessaires
+INNER JOIN prendre_casque pc ON p.id_personnage = pc.id_personnage
 
--- Jointures pour récupérer les détails des personnages ayant le même nombre maximal de casques pris dans cette bataille
-INNER JOIN prendre_casque pc ON subquery.id_personnage = pc.id_personnage
-INNER JOIN personnage ON pc.id_personnage = personnage.id_personnage
-INNER JOIN bataille ON pc.id_bataille = bataille.id_bataille
-WHERE bataille.id_bataille = 1 -- Filtre pour la bataille spécifique
+-- Jointure entre les tables bataille et prendre_casque pour récupérer les données nécessaires
+INNER JOIN bataille b ON pc.id_bataille = b.id_bataille
 
--- Groupement pour afficher tous les personnages ayant le même nombre maximal de casques pris
-GROUP BY personnage.id_personnage, personnage.nom_personnage, subquery.total_casques_pris
-HAVING total_casques_pris = subquery.total_casques_pris;
+-- Filtre pour une bataille spécifique
+WHERE b.id_bataille = 1 
+
+-- Groupement des résultats par l'identifiant de la bataille
+GROUP BY p.id_personnage
+
+HAVING SUM(pc.qte) >= ALL (
+    
+    -- Sélectionne le nom de la personne et le total de casques pris dont le 'id_bataille' = 1
+    SELECT subquery.total_casques_pris
+    FROM(
+        -- Calcule le total de casques pris la id_bataille = 1
+        SELECT SUM(pc2.qte) AS total_casques_pris
+        -- Table utilisée dans la requête
+        FROM prendre_casque pc2
+
+        -- Jointure entre les tables
+        INNER JOIN personnage p2 ON pc2.id_personnage = p2.id_personnage
+        INNER JOIN bataille b2 ON pc2.id_bataille = b2.id_bataille
+        -- Filtre pour la bataille spécifique
+        WHERE b2.id_bataille = 1
+
+        -- Groupement des résultats par l'identifiant de prendre_casque
+        GROUP BY pc2.id_personnage
+    ) AS subquery
+);
+
+
 
 

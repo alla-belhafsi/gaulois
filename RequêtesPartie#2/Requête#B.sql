@@ -1,4 +1,3 @@
-
 -- QUESTION B --- Autorisez Bonemine à boire de la potion magique, elle est jalouse d'Iélosubmarine...
 
 -- INSERT INTO est une commande SQL utilisée pour ajouter des données à une table.

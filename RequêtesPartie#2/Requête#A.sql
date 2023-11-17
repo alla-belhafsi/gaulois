@@ -7,9 +7,3 @@ INSERT INTO personnage (nom_personnage, adresse_personnage, id_lieu, id_speciali
 
 -- VALUES est utilisé avec INSERT INTO pour spécifier les valeurs à insérer dans la table.
 VALUES ('Champdeblix', 'Hantassion', 6, 12);
-
-
-
-
-
-

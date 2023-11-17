@@ -15,5 +15,5 @@ VALUES (1, 12);
 -- La clause SET dans une instruction UPDATE indique quelles colonnes doivent être mises à jour et avec quelles valeurs.
 --SET id_potion = 13
 
--- Ici, elle met à jour la table autoriser_boire en changeant l'ID de la potion pour Bonemine, qui a un ID de personnage égal à 12.
+-- Ici, elle met à jour la table autoriser_boire en changeant l'ID de la potion pour Bonemine, qui à un ID de personnage égal à 12.
 --WHERE id_personnage = 12;

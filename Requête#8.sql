@@ -1,6 +1,6 @@
--- Première Méthode permet d'afficher juste un seul personnage avec le plus grand nombre de casques pris en cas d'égalité avec un autre personnage dans la bataille 'Bataille du village gaulois'.
-
 -- Nom du ou des personnages qui ont le plus de 'prendre_casques.qte' dans la bataille 'Bataille du village gaulois'.
+
+-- Première Méthode permet d'afficher juste un seul personnage avec le plus grand nombre de casques pris en cas d'égalité avec un autre personnage dans la bataille 'Bataille du village gaulois'.
 
 -- Sélection des colonnes 'nom_personnage', 'total_casques_pris'
 SELECT personnage.nom_personnage AS nom_personnage, SUM(prendre_casque.qte) AS total_casques_pris

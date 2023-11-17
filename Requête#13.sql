@@ -1,6 +1,6 @@
--- Première Méthode permet d'afficher juste un seul lieu avec le plus grand nombre d'habitants en cas d'égalité avec un autre lieu
-
 -- Nom du / des lieu(x) possédant le plus d'habitants, en dehors du village gaulois. (condate, lutèce)
+
+-- Première Méthode permet d'afficher juste un seul lieu avec le plus grand nombre d'habitants en cas d'égalité avec un autre lieu
 
 -- Sélection du nom du/des lieu(x) avec le plus grand nombre d'habitants, en dehors du village gaulois
 SELECT l.nom_lieu AS nom_lieu, COUNT(p.id_personnage) AS total_habitants
@@ -36,8 +36,8 @@ WHERE lieu.id_lieu != 1
 GROUP BY lieu.id_lieu
 
 -- Sous-requête pour trouver le nombre maximal d'habitants parmi les lieux en dehors du village gaulois
-HAVING COUNT(personnage.id_personnage) = (
-    SELECT MAX(total_habitants)
+HAVING COUNT(personnage.id_personnage) >= ALL (
+    SELECT total_habitants
     FROM (
         SELECT COUNT(personnage.id_personnage) AS total_habitants
         FROM personnage

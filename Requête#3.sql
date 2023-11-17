@@ -21,7 +21,7 @@ GROUP BY
     lieu.id_lieu, personnage.id_personnage, specialite.id_specialite
 -- Trie les résultats par nom du lieu
 ORDER BY 
-    lieu.nom_lieu; 
+    lieu.id_lieu; 
 
 -- Requête 2: triés par nom du personnage
 
@@ -44,4 +44,4 @@ GROUP BY
     personnage.id_personnage, specialite.id_specialite, lieu.id_lieu
 -- Trie les résultats par nom du personnage
 ORDER BY 
-    personnage.nom_personnage; 
+    personnage.id_personnage; 

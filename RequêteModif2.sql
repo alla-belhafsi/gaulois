@@ -1,5 +1,5 @@
 
--- Autorisez Bonemine à boire de la potion magique, elle est jalouse d'Iélosubmarine...
+-- QUESTION B --- Autorisez Bonemine à boire de la potion magique, elle est jalouse d'Iélosubmarine...
 
 -- INSERT INTO est une commande SQL utilisée pour ajouter des données à une table.
 INSERT INTO autoriser_boire (id_potion, id_personnage)
@@ -7,7 +7,7 @@ INSERT INTO autoriser_boire (id_potion, id_personnage)
 -- VALUES est utilisé avec INSERT INTO pour spécifier les valeurs à insérer dans la table.
 VALUES (1, 12);
 
--- Modifier la potion de Bonemine pour pouvoir boire de la potion magique, elle est jalouse d'Iélosubmarine...
+-- Si je souhaite modifier la potion de Bonemine en potion magique
 
 -- L'instruction UPDATE modifie les enregistrements dans une table.
 --UPDATE autoriser_boire

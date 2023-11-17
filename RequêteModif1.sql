@@ -1,4 +1,4 @@
---  Ajoutez le personnage suivant : Champdeblix, agriculteur (ID = 12), résidant à la ferme Hantassion de Rotomagus (ID = 6).
+--  QUESTION A --- Ajoutez le personnage suivant : Champdeblix, agriculteur (ID = 12), résidant à la ferme Hantassion de Rotomagus (ID = 6).
 
 -- Cette commande ajoute un nouveau personnage à la table 'personnage'.
 

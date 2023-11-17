@@ -28,7 +28,7 @@ FROM lieu
 INNER JOIN personnage ON lieu.id_lieu = personnage.id_lieu
 
 -- Regroupement des résultats pour obtenir le count de 'personnage' pour chaque 'id_lieu'
-GROUP BY lieu.nom_lieu
+GROUP BY lieu.id_lieu
 
 -- Tri par ordre décroissant en fonction du 'nombre_de_personnage' par 'id_lieu'
 ORDER BY nombre_de_personnage DESC;  
@@ -66,7 +66,7 @@ GROUP BY
 
 -- Trie les résultats par nom du lieu
 ORDER BY 
-    lieu.nom_lieu; 
+    lieu.id_lieu; 
 
 -- Requête 2: triés par nom du personnage
 
@@ -95,7 +95,7 @@ GROUP BY
 
 -- Trie les résultats par nom du personnage
 ORDER BY 
-    personnage.nom_personnage; 
+    personnage.id_personnage; 
 
 
 -----------------------------------------------------------------------------
